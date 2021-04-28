@@ -1,4 +1,4 @@
-package br.com.zupacademy.izabella.casadocodigo.autor;
+package br.com.zupacademy.izabella.casadocodigo.categoria;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,25 +14,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/autores")
-public class AutorController {
+@RequestMapping("/categorias")
+public class CategoriaController {
 
 	@PersistenceContext
 	private EntityManager manager;
 
 	@Autowired
-	private VerificaEmailDuplicado verificaEmail;
+	private VerificaNomeDuplicado verificaNome;
 
 	@InitBinder
 	public void init(WebDataBinder binder) {
-		binder.addValidators(verificaEmail);
+		binder.addValidators(verificaNome);
 	}
 
 	@PostMapping
 	@Transactional
-	public String criarAutor(@RequestBody @Valid NovoAutorRequest request) {
-		Autor autor = request.toModel();
-		manager.persist(autor);
-		return autor.toString();
+	public String criaCategoria(@RequestBody @Valid NovaCategoriaRequest request) {
+		Categoria categoria = request.toModel();
+		manager.persist(categoria);
+		return categoria.toString();
+
 	}
+
 }

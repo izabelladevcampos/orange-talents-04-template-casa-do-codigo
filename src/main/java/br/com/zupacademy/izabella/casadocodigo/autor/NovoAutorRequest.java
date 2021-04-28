@@ -33,7 +33,4 @@ public class NovoAutorRequest {
 		return email;
 	}
 
-	
-	
-
 }
