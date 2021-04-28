@@ -2,9 +2,12 @@ package br.com.zupacademy.izabella.casadocodigo.categoria;
 
 import javax.validation.constraints.NotBlank;
 
+import br.com.zupacademy.izabella.casadocodigo.compartilhado.UniqueValue;
+
 public class NovaCategoriaRequest {
 
 	@NotBlank
+	@UniqueValue(domainClass = Categoria.class, fieldName = "nome")
 	private String nome;
 
 	@Deprecated

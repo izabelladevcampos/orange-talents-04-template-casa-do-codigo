@@ -20,13 +20,6 @@ public class CategoriaController {
 	@PersistenceContext
 	private EntityManager manager;
 
-	@Autowired
-	private VerificaNomeDuplicado verificaNome;
-
-	@InitBinder
-	public void init(WebDataBinder binder) {
-		binder.addValidators(verificaNome);
-	}
 
 	@PostMapping
 	@Transactional
