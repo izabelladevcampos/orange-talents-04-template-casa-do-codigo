@@ -37,7 +37,7 @@ public class NovoLivroRequest {
 
 	@NotNull
 	@Min(100)
-	private Integer numPaginas;
+	private Integer numPagina;
 
 	@NotBlank
 	@UniqueValue(domainClass = Livro.class, fieldName = "isbn")
@@ -57,7 +57,7 @@ public class NovoLivroRequest {
 	private Long idAutor;
 
 	public NovoLivroRequest(@NotBlank String titulo, @NotBlank @Length(max = 500) String resumo, String sumario,
-			@NotNull @Min(20) BigDecimal preco, @NotNull @Min(100) Integer numPaginas, @NotBlank String isbn,
+			@NotNull @Min(20) BigDecimal preco, @NotNull @Min(100) Integer numPagina, @NotBlank String isbn,
 			@Future @NotNull @JsonProperty("dataPublicacao") LocalDate dataPublicacao, @NotNull Long idCategoria,
 			@NotNull Long idAutor) {
 		super();
@@ -65,7 +65,7 @@ public class NovoLivroRequest {
 		this.resumo = resumo;
 		this.sumario = sumario;
 		this.preco = preco;
-		this.numPaginas = numPaginas;
+		this.numPagina = numPagina;
 		this.isbn = isbn;
 		this.dataPublicacao = dataPublicacao;
 		this.idCategoria = idCategoria;
@@ -79,7 +79,7 @@ public class NovoLivroRequest {
 		@NotNull
 		Categoria categoria = manager.find(Categoria.class, this.idCategoria);
 		
-		return new Livro(titulo, resumo, sumario, preco, numPaginas, isbn, dataPublicacao, categoria, autor);
+		return new Livro(titulo, resumo, sumario, preco, numPagina, isbn, dataPublicacao, categoria, autor);
 	}
 
 }

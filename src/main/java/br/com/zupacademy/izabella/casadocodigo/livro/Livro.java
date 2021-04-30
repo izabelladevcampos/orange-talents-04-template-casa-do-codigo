@@ -42,7 +42,7 @@ public class Livro {
 
 	@NotNull
 	@Min(100)
-	private Integer numPaginas;
+	private Integer numPagina;
 
 	@NotBlank
 	private String isbn;
@@ -66,14 +66,13 @@ public class Livro {
 	}
 
 	public Livro(@NotBlank String titulo, @NotBlank @Length(max = 500) String resumo, String sumario,
-			@NotNull @Min(20) BigDecimal preco, @NotNull @Min(100) Integer numPaginas, @NotBlank String isbn,
+			@NotNull @Min(20) BigDecimal preco, @NotNull @Min(100) Integer numPagina, @NotBlank String isbn,
 			@NotNull @Future LocalDate dataPublicacao, @NotNull Categoria categoria, @NotNull Autor autor) {
-		super();
 		this.titulo = titulo;
 		this.resumo = resumo;
 		this.sumario = sumario;
 		this.preco = preco;
-		this.numPaginas = numPaginas;
+		this.numPagina = numPagina;
 		this.isbn = isbn;
 		this.dataPublicacao = dataPublicacao;
 		this.categoria = categoria;
@@ -100,8 +99,8 @@ public class Livro {
 		return preco;
 	}
 
-	public Integer getNumPaginas() {
-		return numPaginas;
+	public Integer getNumPagina() {
+		return numPagina;
 	}
 
 	public String getIsbn() {
@@ -123,7 +122,7 @@ public class Livro {
 	@Override
 	public String toString() {
 		return "Livro [id=" + id + ", titulo=" + titulo + ", resumo=" + resumo + ", sumario=" + sumario + ", preco="
-				+ preco + ", numPaginas=" + numPaginas + ", isbn=" + isbn + ", dataPublicacao=" + dataPublicacao
+				+ preco + ", numPagina=" + numPagina + ", isbn=" + isbn + ", dataPublicacao=" + dataPublicacao
 				+ ", categoria=" + categoria + ", autor=" + autor + "]";
 	}
 }
