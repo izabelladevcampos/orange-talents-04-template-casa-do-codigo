@@ -5,9 +5,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
 @Component
-public class VerificaEmailDuplicado implements org.springframework.validation.Validator {
+public class VerificaEmailDuplicado implements Validator {
 
 	@Autowired
 	private AutorRepository autorRepository;
@@ -26,7 +27,8 @@ public class VerificaEmailDuplicado implements org.springframework.validation.Va
 		NovoAutorRequest request = (NovoAutorRequest) target;
 		Optional<Autor> possivelAutor = autorRepository.findByEmail(request.getEmail());
 		if (possivelAutor.isPresent()) {
-			errors.rejectValue("email", null, "Já existe um cadastrado com o email (" + request.getEmail() + ") informado." );
+			errors.rejectValue("email", null,
+					"Já existe um cadastrado com o email (" + request.getEmail() + ") informado.");
 		}
 	}
 
