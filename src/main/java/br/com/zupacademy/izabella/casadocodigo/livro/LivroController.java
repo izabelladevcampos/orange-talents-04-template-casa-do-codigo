@@ -38,7 +38,6 @@ public class LivroController {
 	@Transactional
 	public String criaLivro(@RequestBody @Valid NovoLivroRequest request) {
 		Livro livro = request.toModel(manager);
-		System.out.println(livro);
 		manager.persist(livro);
 		return livro.toString();
 

@@ -15,11 +15,16 @@ import javax.validation.Payload;
 	@Constraint(validatedBy = UniqueValueValidator.class)
 
 	public @interface UniqueValue {
+		
+		
 		/*Informações Obrigatórias: */
 		/*Mensagem default que será carregada quando houver erro de validação*/
 	    String message() default "Este dado já consta em nossos registros!";
+
 	    /*Aplicar validação em um grupo*/
 	    Class<?>[] groups() default {};
+	    
+	    
 	    /*Enviar informações a mais*/
 	    Class<? extends Payload>[] payload() default {};
 	    
