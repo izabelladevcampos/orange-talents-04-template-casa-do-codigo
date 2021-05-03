@@ -1,3 +1,4 @@
+package br.com.zupacademy.izabella.casadocodigo.categoria.validacao;
 /*
  * package br.com.zupacademy.izabella.casadocodigo.categoria;
  * 

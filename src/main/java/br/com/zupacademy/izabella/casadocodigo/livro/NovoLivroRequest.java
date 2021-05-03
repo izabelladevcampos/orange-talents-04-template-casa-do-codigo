@@ -16,8 +16,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import br.com.zupacademy.izabella.casadocodigo.autor.Autor;
 import br.com.zupacademy.izabella.casadocodigo.categoria.Categoria;
-import br.com.zupacademy.izabella.casadocodigo.compartilhado.ExistsId;
-import br.com.zupacademy.izabella.casadocodigo.compartilhado.UniqueValue;
+import br.com.zupacademy.izabella.casadocodigo.compartilhado.validacao.ExistsId;
+import br.com.zupacademy.izabella.casadocodigo.compartilhado.validacao.UniqueValue;
 
 public class NovoLivroRequest {
 

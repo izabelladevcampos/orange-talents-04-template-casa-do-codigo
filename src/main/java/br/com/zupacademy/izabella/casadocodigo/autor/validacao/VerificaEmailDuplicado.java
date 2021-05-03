@@ -1,4 +1,4 @@
-package br.com.zupacademy.izabella.casadocodigo.autor;
+package br.com.zupacademy.izabella.casadocodigo.autor.validacao;
 
 import java.util.Optional;
 
@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+
+import br.com.zupacademy.izabella.casadocodigo.autor.Autor;
+import br.com.zupacademy.izabella.casadocodigo.autor.AutorRepository;
+import br.com.zupacademy.izabella.casadocodigo.autor.NovoAutorRequest;
 
 @Component
 public class VerificaEmailDuplicado implements Validator {

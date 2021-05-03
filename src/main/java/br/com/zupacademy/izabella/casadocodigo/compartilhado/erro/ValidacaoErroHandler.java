@@ -1,4 +1,4 @@
-package br.com.zupacademy.izabella.casadocodigo.compartilhado;
+package br.com.zupacademy.izabella.casadocodigo.compartilhado.erro;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -23,16 +23,8 @@ public class LivroController {
 	@PersistenceContext
 	private EntityManager manager;
 
-	public LivroController(EntityManager manager) {
-		this.manager = manager;
-	}
-
-	private LivroRepository livroRepository;
-
 	@Autowired
-	public LivroController(LivroRepository livroRepository) {
-		this.livroRepository = livroRepository;
-	}
+	private LivroRepository livroRepository;
 
 	@PostMapping
 	@Transactional

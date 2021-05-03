@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import br.com.zupacademy.izabella.casadocodigo.compartilhado.ExistsId;
+import br.com.zupacademy.izabella.casadocodigo.compartilhado.validacao.ExistsId;
 
 public class NovoEstadoRequest {
 

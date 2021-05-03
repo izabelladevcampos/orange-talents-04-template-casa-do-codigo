@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
-import br.com.zupacademy.izabella.casadocodigo.compartilhado.UniqueValue;
+import br.com.zupacademy.izabella.casadocodigo.compartilhado.validacao.UniqueValue;
 
 public class NovaCategoriaRequest {
 

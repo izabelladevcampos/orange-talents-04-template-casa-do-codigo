@@ -1,7 +1,6 @@
-package br.com.zupacademy.izabella.casadocodigo.autor;
+package br.com.zupacademy.izabella.casadocodigo.cliente;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -13,28 +12,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.zupacademy.izabella.casadocodigo.autor.validacao.VerificaEmailDuplicado;
+import br.com.zupacademy.izabella.casadocodigo.cliente.validacao.VericaSePaisTemEstadoCadastrado;
 
 @RestController
-@RequestMapping("/autores")
-public class AutorController {
+@RequestMapping("/clientes")
+public class ClienteController {
 
-	@PersistenceContext
+	@Autowired
 	private EntityManager manager;
 
 	@Autowired
-	private VerificaEmailDuplicado verificaEmail;
+	private VericaSePaisTemEstadoCadastrado verificaSePaisTemEstadoCadastrado;
 
 	@InitBinder
 	public void init(WebDataBinder binder) {
-		binder.addValidators(verificaEmail);
+		binder.addValidators(verificaSePaisTemEstadoCadastrado);
 	}
 
 	@PostMapping
 	@Transactional
-	public String criarAutor(@RequestBody @Valid NovoAutorRequest request) {
-		Autor autor = request.toModel();
-		manager.persist(autor);
-		return autor.toString();
+	public String criaCliente(@RequestBody @Valid NovoClienteRequest request) {
+		Cliente cliente = request.toModel(manager);
+		manager.persist(cliente);
+		return cliente.toString();
 	}
 }
